@@ -7,8 +7,6 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: [],
 })
-export class AppComponent {
-  title = 'devsu-frontend';
-}
+export class AppComponent {}
