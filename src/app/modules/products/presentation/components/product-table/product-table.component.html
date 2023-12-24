@@ -1,0 +1,30 @@
+<div class="flex-row responsive-table">
+  <table>
+    <tr>
+      <th>Logo</th>
+      <th>Nombre del producto</th>
+      <th>Descripción</th>
+      <th>Fecha de liberación</th>
+      <th>Fecha de reestructuración</th>
+      <th></th>
+    </tr>
+    @for (item of products; track $index) {
+    <tr>
+      <td><img class="product-image" src="{{ item.logo }}" alt="Logo" /></td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.description }}</td>
+      <td>{{ item.date_release | formatDate }}</td>
+      <td>{{ item.date_revision | formatDate }}</td>
+      <td>
+        <app-dropdown-menu
+          (updateEmitter)="navToUpdate(item.id)"
+          (deleteEmitter)="onDelete(item)"
+        ></app-dropdown-menu>
+      </td>
+    </tr>
+    }
+  </table>
+</div>
+<div class="flex-row justify-center">
+  <a class="btn" [routerLink]="['/create-product']"> Crear producto </a>
+</div>

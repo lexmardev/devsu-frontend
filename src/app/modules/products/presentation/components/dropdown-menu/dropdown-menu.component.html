@@ -1,0 +1,11 @@
+<div class="dropdown">
+  <div class="pointer" (click)="toggleDropdown()">...</div>
+  @if (isDropdownOpen) {
+  <div class="dropdown-content">
+    <a (click)="emitUpdateClick()" [routerLink]="['/update-product']">
+      Actualizar
+    </a>
+    <span class="pointer" (click)="emitDeleteClick()">Eliminar</span>
+  </div>
+  }
+</div>

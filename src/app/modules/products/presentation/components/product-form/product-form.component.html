@@ -1,0 +1,108 @@
+<div class="form-container">
+  <div class="flex-row justify-center border-bottom">
+    <h1>Formulario de registro</h1>
+  </div>
+  <div class="flex-row justify-center">
+    <form [formGroup]="productForm">
+      <div class="flex-row">
+        <div class="flex-col input-col">
+          <label for="id">ID</label>
+          <input
+            type="text"
+            name="id"
+            id="id"
+            formControlName="id"
+            (input)="verifyId()"
+          />
+          @if (getError('id', 'required')) {
+          <span class="text-error">Es requerido</span>
+          } @if (getError('id', 'minlength')) {
+          <span class="text-error">Mínimo 3 caracteres</span>
+          } @if (getError('id', 'maxlength')) {
+          <span class="text-error">Máximo 10 caracteres</span>
+          } @if (isIdCreated) {
+          <span class="text-error">El ID ya existe</span>
+          }
+        </div>
+        <div class="flex-col input-col">
+          <label for="name">Nombre</label>
+          <input type="text" name="name" id="name" formControlName="name" />
+          @if (getError('name', 'required')) {
+          <span class="text-error">Es requerido</span>
+          } @if (getError('name', 'minlength')) {
+          <span class="text-error">Mínimo 5 caracteres</span>
+          } @if (getError('name', 'maxlength')) {
+          <span class="text-error">Máximo 100 caracteres</span>
+          }
+        </div>
+      </div>
+      <div class="flex-row">
+        <div class="flex-col input-col">
+          <label for="description">Descripción</label>
+          <input
+            type="text"
+            name="description"
+            id="description"
+            formControlName="description"
+          />
+          @if (getError('description', 'required')) {
+          <span class="text-error">Es requerido</span>
+          } @if (getError('description', 'minlength')) {
+          <span class="text-error">Mínimo 10 caracteres</span>
+          } @if (getError('description', 'maxlength')) {
+          <span class="text-error">Máximo 200 caracteres</span>
+          }
+        </div>
+        <div class="flex-col input-col">
+          <label for="logo">Logo</label>
+          <input type="text" name="logo" id="logo" formControlName="logo" />
+          @if (getError('logo', 'required')) {
+          <span class="text-error">Es requerido</span>
+          }
+        </div>
+      </div>
+      <div class="flex-row">
+        <div class="flex-col input-col">
+          <label for="date_release">Fecha Liberación</label>
+          <input
+            type="text"
+            name="date_release"
+            id="date_release"
+            formControlName="date_release"
+            (input)="onInput()"
+          />
+          @if (getError('date_release', 'required')) {
+          <span class="text-error">Es requerido</span>
+          } @if (getError('date_release', 'pattern')) {
+          <span class="text-error">Ingresa un formato DD/MM/AAAA</span>
+          }@if (getError('date_release', 'isCurrentDateGreater')) {
+          <span class="text-error">Fecha debe ser mayor o igual a hoy</span>
+          }
+        </div>
+        <div class="flex-col input-col">
+          <label for="date_revision">Fecha Revisión</label>
+          <input
+            type="text"
+            name="date_revision"
+            id="date_revision"
+            formControlName="date_revision"
+          />
+        </div>
+      </div>
+      <div class="flex-row justify-center">
+        <div class="flex-col input-col">
+          <input class="btn pointer" type="reset" value="Reiniciar" />
+        </div>
+        <div class="flex-col input-col">
+          <input
+            class="btn btn-send pointer"
+            type="submit"
+            value="Enviar"
+            [disabled]="!productForm.valid"
+            (click)="onSubmit()"
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

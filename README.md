@@ -1,27 +1,56 @@
-# DevsuFrontend
+# Angular Test V0.0.1
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
+Bienvenido a Mi Aplicación Angular.
 
-## Development server
+## Requisitos Previos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Asegúrate de tener instalados los siguientes elementos antes de comenzar:
 
-## Code scaffolding
+- [Node.js](https://nodejs.org/)
+- [npm (Node Package Manager)](https://www.npmjs.com/)
+- [Angular CLI](https://cli.angular.io/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Clona el repositorio
 
-## Build
+Puedes encontrar el código fuente en [GitHub](https://github.com/lexmardev/devsu-frontend.git).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```git
+git clone https://github.com/lexmardev/devsu-frontend.git
+```
 
-## Running unit tests
+## Iniciando el proyecto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Primero haz un install de las dependencias.
 
-## Running end-to-end tests
+```bash
+# Con pnpm (usado en el proyecto)
+pnpm install
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Con npm
+rm -f pnpm-lock.yaml
+npm install
+```
 
-## Further help
+Inicia el proyecto
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+ng serve -o
+```
+
+## Tests
+
+Para correr los test solo ejecuta el siguiente comando
+
+```bash
+# Con pnpm
+pnpm run test
+
+# Con npm
+npm run test
+```
+
+# Licencia
+
+Solo deja tu estrellita.
+
+## Gracias
