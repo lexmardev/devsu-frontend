@@ -1,0 +1,8 @@
+@if (!isLoading) { @if (product) {
+<app-product-form [product]="product" (submitEmitter)="onSubmit($event)">
+</app-product-form>
+} @else {
+<div class="flex-row justify-center">
+  <h1>No se pudo encontrar el producto</h1>
+</div>
+} }

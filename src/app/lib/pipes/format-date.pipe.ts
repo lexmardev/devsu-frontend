@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FormatDatePipe implements PipeTransform {
   transform(value: Date, ...args: unknown[]): string {
-    console.log(value);
     const date = new Date(value);
 
     const day = date.getUTCDate();

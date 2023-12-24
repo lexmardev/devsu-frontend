@@ -1,0 +1,43 @@
+.input-col {
+  margin: 25px;
+}
+
+.form-container {
+  background-color: white;
+  border-radius: 60px;
+  margin: 100px;
+}
+
+input {
+  border-radius: 5px;
+  padding: 15px;
+  border: solid 1px black;
+}
+
+input:focus {
+  border-color: #193155;
+}
+
+.border-bottom {
+  border-bottom: solid 2px black;
+}
+
+.btn {
+  padding: 20px;
+}
+
+.btn-send {
+  background-color: #f9de4b;
+}
+
+.text-error {
+  color: red;
+}
+
+@media screen and (max-width: 600px) {
+  .form-container {
+    margin: 0;
+    margin-top: 50px;
+    border-radius: 0px;
+  }
+}

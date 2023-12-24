@@ -13,11 +13,27 @@ export class ProductApplicationService implements IProductRepository {
     private readonly productRepository: IProductRepository
   ) {}
 
-  findByPageByCriteria(
-    criteria: string,
-    page: number,
-    limit: number
-  ): Observable<IProduct[]> {
-    return this.productRepository.findByPageByCriteria(criteria, page, limit);
+  create(product: IProduct): Observable<IProduct> {
+    return this.productRepository.create(product);
+  }
+
+  update(product: IProduct): Observable<IProduct> {
+    return this.productRepository.update(product);
+  }
+
+  delete(id: string): Observable<string> {
+    return this.productRepository.delete(id);
+  }
+
+  getAll(page: number, limit: number): Observable<IProduct[]> {
+    return this.productRepository.getAll(page, limit);
+  }
+
+  findById(id: string): Observable<IProduct | undefined> {
+    return this.productRepository.findById(id);
+  }
+
+  verifyId(id: string): Observable<string> {
+    return this.productRepository.verifyId(id);
   }
 }
